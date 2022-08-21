@@ -7,20 +7,21 @@ from random import randint
 
 # picking a single lottery number
 def pick_lotto():
-    maxm=53
-    maxj=6
-    m=maxm
-# create all numbers from 0 to m
-    r=range(m+1)
-# start with an empty result
-    v=[]
-    for j in range(maxj):
+
+    max_m = 53  # max number = m
+    max_j = 6
+    m = max_m
+    # create all numbers from 0 to m
+    r = range(m+1)
+    # start with an empty result
+    v = []
+    for j in range(max_j):
         # get ith number from r...
-        i=randint(1,m)
-        n=r[i]
+        i = randint(1, m)
+        n = r[i]
         # remove it from r...
-        r[i:i+1]=[]
-        m=m-1
+        r[i:i+1] = []
+        m = m-1
         # and append to the result
         v.append(n)
         return v
@@ -29,11 +30,12 @@ def pick_lotto():
 def run():
     done=0
     while not done:
-        try: x = input('\npress Enter for Lotto picks (Q to quit). ')
+        try:
+            x = input('\npress Enter for Lotto picks (Q to quit). ')
         except EOFError:
             x = 'q'
         if x and (x[0] == 'q' or x[0] == 'Q'):
-            done=1
+            done = 1
             print('done')
         else:
             print(pick_lotto())
