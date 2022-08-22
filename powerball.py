@@ -29,9 +29,9 @@ def pick_lotto():
 
 # picking the final number
 def pick_powerball():
-    max_m = 26  # max number = m
+    pow_m = 26  # max number = m
     max_j = 1
-    m = max_m
+    m = pow_m
     # create all numbers from 0 to m
     r = list(range(m + 1))
     # start with an empty result
@@ -51,14 +51,15 @@ def pick_powerball():
 
 # generating the tuple f
 def handle_numbers():
-    lottery_nums = [0] * 6 # could be done more elegantly
+    lottery_nums = []  # could be done more elegantly
 
-    for i in lottery_nums:
-        if i == 6:
-            lottery_nums[i] = pick_powerball()
-        else:
-            lottery_nums[i] = pick_lotto()
-    print(lottery_nums)
+    for i in range(5):
+        print(pick_lotto())
+        # lottery_nums.append()
+    print(pick_powerball())
+    # lottery_nums.append(powerball)
+    # print(lottery_nums)
+
     # pass  # escape pass
 
 
@@ -74,7 +75,8 @@ def run():
             done = 1
             print('done')
         else:
-            print(pick_lotto())
+            # print(pick_lotto())
+            handle_numbers()
 
 
 # immediate-mode commands, for drag-and-drop or execfile() execution
