@@ -51,12 +51,16 @@ def pick_powerball():
 
 # generating the tuple f
 def handle_numbers():
-    lottery_nums = []  # could be done more elegantly
+    lottery_nums = ()  # could be done more elegantly
 
     for i in range(5):
-        print(pick_lotto())
+        lotto_val = pick_lotto()
+        lottery_nums = lottery_nums + tuple(lotto_val)
+        # print(pick_lotto())
         # lottery_nums.append()
-    print(pick_powerball())
+    power_val = pick_powerball()
+    lottery_nums = lottery_nums + tuple(power_val)
+    print(lottery_nums)
     # lottery_nums.append(powerball)
     # print(lottery_nums)
 
