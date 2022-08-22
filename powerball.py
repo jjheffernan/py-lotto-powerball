@@ -46,10 +46,20 @@ def pick_powerball():
         # and append to the result
         v.append(n)
         return v
-    # pass
+    # pass  # escape pass
 
 
+# generating the tuple f
+def handle_numbers():
+    lottery_nums = [0] * 6 # could be done more elegantly
 
+    for i in lottery_nums:
+        if i == 6:
+            lottery_nums[i] = pick_powerball()
+        else:
+            lottery_nums[i] = pick_lotto()
+    print(lottery_nums)
+    # pass  # escape pass
 
 
 def run():
