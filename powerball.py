@@ -25,6 +25,7 @@ def pick_lotto():
         # and append to the result
         v.append(n)
         return v
+    return v
 
 
 # picking the final number
